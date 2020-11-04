@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+<xs:element name="name">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element type="xs:string" name="firstname"/>
+            <xs:element type="xs:string" name="lastname"/>
+                <xs:element name="age">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                           <xs:minInclusive value="0"/>
+                           <xs:maxInclusive value="60"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            <xs:element name="address">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="street"/>
+                        <xs:element type="xs:string" name="city"/>
+                        <xs:element name="state">
+                            <xs:simpleType>
+                                <xs:restriction  base="xs:string">
+                                   <xs:pattern value="[A-Z][A-Z]"/>
+                                </xs:restriction >
+                            </xs:simpleType> 
+                        </xs:element>
+                        <xs:element name="zip">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                   <xs:pattern value="[1-9][1-9][1-9][1-9][1-9]"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+
